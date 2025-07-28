@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+numpy
+tensorflow
+python-jose[cryptography]
+python-multipart
+mlflow>=2.0.0
+
+# prometheus monitoring
+prometheus_client
+dotenv
+starlette-exporter
