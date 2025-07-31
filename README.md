@@ -36,7 +36,34 @@ graph LR
     style E fill:#fce4ec
     style F fill:#f1f8e9
 ```
+## 🗂️ Structure du Projet
 
+```
+📁 epilepsy-mlops/
+├── 🔧 .github/workflows/          # CI/CD Pipeline
+│   └── ci-cd.yml
+├── 📊 monitoring/                 # Prometheus & Grafana configs
+│   ├── prometheus/
+│   └── grafana/
+├── 🐳 services/                   # Microservices
+│   ├── 🔐 authentication/        # JWT Auth API
+│   ├── 📊 preprocessing/          # Data Pipeline
+│   ├── 🤖 model_training/         # LSTM Training
+│   ├── 📈 evaluation/             # Model Evaluation
+│   ├── 🚀 inference/              # Prediction API
+│   └── 📋 patient_data_pull/      # Data Extraction
+├── 🧪 tests/                      # Test Suite
+│   ├── unit/
+├── 📦 data/                       # Data Management
+│   ├── raw/
+│   ├── processed/
+│   └── models/
+├── ⚡ orchestration/              # Prefect Workflows
+│   └── flows/
+├── 🐳 docker-compose.yml          # Container Orchestration
+├── 📋 requirements.txt            # Dependencies
+└── 📚 docs/                       # Documentation
+```
 ## 🏗️ Architecture Système
 
 ### Infrastructure MLOps
@@ -158,18 +185,18 @@ git clone https://github.com/your-org/epilepsy-mlops.git
 cd epilepsy-mlops
 
 # 2️⃣ Configuration de l'environnement
-cp .env.example .env
-# Éditer .env avec vos configurations
+python -m venv virtmlops
 
-# 3️⃣ Démarrer l'infrastructure
-docker-compose up -d
+virtmlops\Scripts\activate (windows)
+
+# 3️⃣ Batir les images
+docker-compose build
 
 # 4️⃣ Initialiser les données
 dvc pull
-python scripts/initialize_data.py
 
-# 5️⃣ Lancer le pipeline complet
-prefect deployment run "epilepsy-pipeline/production"
+# 5️⃣ Démarrer l'infrastructure
+docker-compose up -d
 ```
 
 ### Accès aux Services
@@ -207,25 +234,6 @@ graph LR
     style G fill:#e0f2f1
     style H fill:#fff8e1
     style I fill:#e8eaf6
-```
-
-### Tests Automatisés
-
-```bash
-# 🧪 Tests unitaires avec pytest
-pytest tests/ -v --cov=services/ --cov-report=html
-
-# 🔍 Linting et formatage
-black services/
-flake8 services/
-mypy services/
-
-# 🛡️ Tests de sécurité
-bandit -r services/
-safety check
-
-# 🚀 Tests d'intégration
-pytest tests/integration/ -v
 ```
 
 ## 📊 Monitoring & Observabilité
@@ -268,36 +276,7 @@ graph TD
     style GRAF fill:#4ECDC4
 ```
 
-## 🗂️ Structure du Projet
 
-```
-📁 epilepsy-mlops/
-├── 🔧 .github/workflows/          # CI/CD Pipeline
-│   └── ci-cd.yml
-├── 📊 monitoring/                 # Prometheus & Grafana configs
-│   ├── prometheus/
-│   └── grafana/
-├── 🐳 services/                   # Microservices
-│   ├── 🔐 authentication/        # JWT Auth API
-│   ├── 📊 preprocessing/          # Data Pipeline
-│   ├── 🤖 model_training/         # LSTM Training
-│   ├── 📈 evaluation/             # Model Evaluation
-│   ├── 🚀 inference/              # Prediction API
-│   └── 📋 patient_data_pull/      # Data Extraction
-├── 🧪 tests/                      # Test Suite
-│   ├── unit/
-│   ├── integration/
-│   └── e2e/
-├── 📦 data/                       # Data Management
-│   ├── raw/
-│   ├── processed/
-│   └── models/
-├── ⚡ orchestration/              # Prefect Workflows
-│   └── flows/
-├── 🐳 docker-compose.yml          # Container Orchestration
-├── 📋 requirements.txt            # Dependencies
-└── 📚 docs/                       # Documentation
-```
 
 ## 🛡️ Sécurité & Bonnes Pratiques
 
@@ -415,5 +394,5 @@ gitgraph
 ---
 
 <div align="center">
-<sub>Fait avec ❤️ par l'équipe MLOps • © 2025</sub>
+<sub>Fait par Sarah dans le cadre du projet MLOps • © 2025</sub>
 </div>
