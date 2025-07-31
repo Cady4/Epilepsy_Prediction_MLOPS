@@ -22,6 +22,7 @@
 Cette plateforme MLOps de pointe offre une solution complète pour la prédiction d'épilepsie, intégrant les meilleures pratiques DevOps et MLOps dans un environnement de microservices hautement scalable et sécurisé.
 
 Le schéma suivant illustre le workflow général, étant donné qu'un utilisateur lance une requete pour faire une prédiction : 
+
 ![Texte alternatif](assets/workflow_general.png)
 
 
@@ -161,27 +162,42 @@ docker-compose up -d
 
 ```mermaid
 graph LR
-    A[📝 Code Push] --> B[🧪 Unit Tests]
-    B --> C[🔍 Code Quality]
-    C --> D[🏗️ Build Images]
-    D --> E[🔐 Security Scan]
-    E --> F[📦 Push to Registry]
-    F --> G[🚀 Deploy to Staging]
-    G --> H[✅ Integration Tests]
-    H --> I[🌐 Deploy to Production]
+    A[📝 Code Push/PR] --> B[🧪 Unit Tests]
+    B --> C{✅ Tests Pass?}
+    C -->|❌ Fail| D[🚫 Block Pipeline]
+    C -->|✅ Pass| E[🏗️ Build Docker Images]
+    E --> F[📦 Push to Docker Hub]
+    F --> G[🎉 Deployment Ready]
+    
+    subgraph "🐳 Services Built"
+        S1[Authentication]
+        S2[Preprocessing] 
+        S3[Model Training]
+        S4[Evaluation]
+        S5[Inference]
+        S6[Patient Data Pull]
+        S7[Prefect Orchestrator]
+    end
+    
+    E -.-> S1
+    E -.-> S2
+    E -.-> S3
+    E -.-> S4
+    E -.-> S5
+    E -.-> S6
+    E -.-> S7
     
     style A fill:#e3f2fd
     style B fill:#f3e5f5
     style C fill:#fff3e0
-    style D fill:#e8f5e8
-    style E fill:#fce4ec
+    style E fill:#e8f5e8
     style F fill:#f1f8e9
-    style G fill:#e0f2f1
-    style H fill:#fff8e1
-    style I fill:#e8eaf6
+    style G fill:#e8eaf6
+    style D fill:#ffebee
 ```
 
 ## 📊 Monitoring & Observabilité
+```mermaid
 
 graph LR
     subgraph Business["Business Metrics"]
@@ -211,7 +227,7 @@ graph LR
     style PROM fill:#FF6B6B
     style GRAF fill:#4ECDC4
     style ALERTS fill:#FFB74D
-
+```
 ## 🤝 Contribution
 
 1. **Fork** le repository
