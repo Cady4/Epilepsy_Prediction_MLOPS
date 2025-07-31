@@ -218,7 +218,6 @@ graph LR
     
     MONITORING --> PROM[Prometheus<br/>Collection]
     MONITORING --> GRAF[Grafana<br/>Visualization]
-    MONITORING --> ALERTS[Alert Manager<br/>Notifications]
     
     style Business fill:#e8f5e8
     style Technical fill:#fff3e0
@@ -226,7 +225,6 @@ graph LR
     style MONITORING fill:#f3e5f5
     style PROM fill:#FF6B6B
     style GRAF fill:#4ECDC4
-    style ALERTS fill:#FFB74D
 ```
 ## 🤝 Contribution
 
