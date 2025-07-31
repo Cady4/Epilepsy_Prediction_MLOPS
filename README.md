@@ -22,7 +22,8 @@
 Cette plateforme MLOps de pointe offre une solution complète pour la prédiction d'épilepsie, intégrant les meilleures pratiques DevOps et MLOps dans un environnement de microservices hautement scalable et sécurisé.
 
 Le schéma suivant illustre le workflow général, étant donné qu'un utilisateur lance une requete pour faire une prédiction : 
-![Texte alternatif](assets/workflow general.png)
+![Texte alternatif](assets/workflow_general.png)
+
 
 ### ✨ Fonctionnalités Clés
 
@@ -212,23 +213,6 @@ graph LR
     style ALERTS fill:#FFB74D
 
 ## 🤝 Contribution
-
-### Workflow de Contribution
-
-```mermaid
-gitgraph
-    commit id: "main"
-    branch feature/new-model
-    checkout feature/new-model
-    commit id: "🔬 Research"
-    commit id: "🤖 Implement"
-    commit id: "🧪 Test"
-    checkout main
-    merge feature/new-model
-    commit id: "🚀 Release v2.0"
-```
-
-### Guide de Contribution
 
 1. **Fork** le repository
 2. **Créer** une branche feature (`git checkout -b feature/amazing-feature`)
