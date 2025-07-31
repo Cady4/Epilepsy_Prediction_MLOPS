@@ -1,4 +1,6 @@
-<h1 style="text-align: center;"> 🧠 Epilepsy Prediction MLOps Platform </h1>
+<div style="display: flex; justify-content: center;">
+  <h1> 🧠 Epilepsy Prediction MLOps Platform </h1>
+</div>
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
@@ -68,70 +70,9 @@ graph LR
 
 ### Infrastructure MLOps
 
-```mermaid
-graph TB
-    subgraph "🔧 Orchestration Layer"
-        PREFECT[Prefect Server<br/>Workflow Orchestration]
-    end
-    
-    subgraph "🐳 Microservices Layer"
-        AUTH[🔐 Authentication<br/>FastAPI + JWT]
-        PREP[📊 Preprocessing<br/>Data Pipeline]
-        TRAIN[🤖 Model Training<br/>LSTM Networks]
-        EVAL[📈 Evaluation<br/>Model Promotion]
-        INF[🚀 Inference API<br/>Real-time Predictions]
-        DATA[📋 Patient Data Pull<br/>Data Extraction]
-    end
-    
-    subgraph "📊 Monitoring & Tracking"
-        PROM[📊 Prometheus<br/>Metrics Collection]
-        GRAF[📈 Grafana<br/>Visualization]
-        MLF[🔬 MLflow<br/>Experiment Tracking]
-    end
-    
-    subgraph "💾 Data Layer"
-        DVC[📦 DVC<br/>Data Versioning]
-        DB[(🗄️ Database<br/>Patient Records)]
-        S3[☁️ S3 Storage<br/>Models & Data)]
-    end
-    
-    PREFECT --> AUTH
-    PREFECT --> PREP
-    PREFECT --> TRAIN
-    PREFECT --> EVAL
-    
-    AUTH --> INF
-    PREP --> TRAIN
-    TRAIN --> EVAL
-    EVAL --> INF
-    DATA --> PREP
-    
-    TRAIN --> MLF
-    EVAL --> MLF
-    INF --> PROM
-    PROM --> GRAF
-    
-    PREP --> DVC
-    TRAIN --> DVC
-    EVAL --> DVC
-    
-    DVC --> S3
-    DATA --> DB
-    
-    style PREFECT fill:#4CAF50
-    style AUTH fill:#2196F3
-    style PREP fill:#FF9800
-    style TRAIN fill:#9C27B0
-    style EVAL fill:#FF5722
-    style INF fill:#E91E63
-    style DATA fill:#795548
-    style PROM fill:#FF6B6B
-    style GRAF fill:#4ECDC4
-    style MLF fill:#45B7D1
-    style DVC fill:#96CEB4
-    style DB fill:#FFEAA7
-    style S3 fill:#DDA0DD
-```
+Le schéma suivant détaille le workflow MLOPS utilisé : 
+![Texte alternatif](assets/workflow_mlops.png)
+
 
 ### Pipeline de Données
 
@@ -358,28 +299,6 @@ gitgraph
 4. **Pousser** vers la branche (`git push origin feature/amazing-feature`)
 5. **Ouvrir** une Pull Request
 
-## 📚 Documentation
-
-- 📖 [Guide d'installation détaillé](docs/installation.md)
-- 🔧 [Configuration avancée](docs/configuration.md)
-- 🤖 [Guide du développeur](docs/development.md)
-- 🚀 [Guide de déploiement](docs/deployment.md)
-- 📊 [Monitoring et alertes](docs/monitoring.md)
-
-## 🏆 Reconnaissance
-
-### Technologies Utilisées
-
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![FastAPI](https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/kubernetes-326ce5.svg?&style=for-the-badge&logo=kubernetes&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-000000?style=for-the-badge&logo=prometheus&labelColor=000000)
-![Grafana](https://img.shields.io/badge/Grafana-F2F4F9?style=for-the-badge&logo=grafana&logoColor=orange&labelColor=F2F4F9)
-
-</div>
 
 ---
 
@@ -394,5 +313,5 @@ gitgraph
 ---
 
 <div align="center">
-<sub>Fait par Sarah dans le cadre du projet MLOps • © 2025</sub>
+<sub>Réalisé par Sarah dans le cadre du projet MLOps • © 2025</sub>
 </div>
