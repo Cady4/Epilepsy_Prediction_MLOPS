@@ -21,6 +21,9 @@
 
 Cette plateforme MLOps de pointe offre une solution complète pour la prédiction d'épilepsie, intégrant les meilleures pratiques DevOps et MLOps dans un environnement de microservices hautement scalable et sécurisé.
 
+Le schéma suivant illustre le workflow général, étant donné qu'un utilisateur lance une requete pour faire une prédiction : 
+![Texte alternatif](assets/workflow general.png)
+
 ### ✨ Fonctionnalités Clés
 
 ```mermaid
@@ -179,100 +182,34 @@ graph LR
 
 ## 📊 Monitoring & Observabilité
 
-### Métriques Clés
-
-```mermaid
-graph TD
-    subgraph "🎯 Business Metrics"
-        A[Accuracy Score]
-        B[Prediction Latency]
-        C[Model Drift Score]
+graph LR
+    subgraph Business["Business Metrics"]
+        BM[Model Performance<br/>Accuracy & Latency<br/>Drift Detection]
     end
     
-    subgraph "🛠️ Technical Metrics"
-        D[API Response Time]
-        E[Container Health]
-        F[Resource Usage]
+    subgraph Technical["Technical Metrics"]
+        TM[System Health<br/>API Performance<br/>Resource Usage]
     end
     
-    subgraph "👥 User Metrics"
-        G[Authentication Rate]
-        H[API Usage]
-        I[Error Rate]
+    subgraph User["User Metrics"]
+        UM[Authentication<br/>API Usage<br/>Error Rates]
     end
     
-    A --> PROM[📊 Prometheus]
-    B --> PROM
-    C --> PROM
-    D --> PROM
-    E --> PROM
-    F --> PROM
-    G --> PROM
-    H --> PROM
-    I --> PROM
+    BM --> MONITORING[Monitoring Platform]
+    TM --> MONITORING
+    UM --> MONITORING
     
-    PROM --> GRAF[📈 Grafana Dashboard]
+    MONITORING --> PROM[Prometheus<br/>Collection]
+    MONITORING --> GRAF[Grafana<br/>Visualization]
+    MONITORING --> ALERTS[Alert Manager<br/>Notifications]
     
+    style Business fill:#e8f5e8
+    style Technical fill:#fff3e0
+    style User fill:#e3f2fd
+    style MONITORING fill:#f3e5f5
     style PROM fill:#FF6B6B
     style GRAF fill:#4ECDC4
-```
-
-
-
-## 🛡️ Sécurité & Bonnes Pratiques
-
-### Architecture de Sécurité
-
-```mermaid
-graph TB
-    subgraph "🔐 Security Layer"
-        JWT[JWT Authentication]
-        RBAC[Role-Based Access]
-        SSL[SSL/TLS Encryption]
-    end
-    
-    subgraph "🛡️ Infrastructure Security"
-        FW[Firewall Rules]
-        SEC[Security Scanning]
-        VAULT[Secrets Management]
-    end
-    
-    subgraph "📊 Audit & Compliance"
-        LOG[Security Logging]
-        MON[Anomaly Detection]
-        COMP[Compliance Checks]
-    end
-    
-    JWT --> RBAC
-    RBAC --> SSL
-    SSL --> FW
-    FW --> SEC
-    SEC --> VAULT
-    VAULT --> LOG
-    LOG --> MON
-    MON --> COMP
-    
-    style JWT fill:#FF6B6B
-    style RBAC fill:#4ECDC4
-    style SSL fill:#45B7D1
-    style FW fill:#96CEB4
-    style SEC fill:#FFEAA7
-    style VAULT fill:#DDA0DD
-    style LOG fill:#FFB74D
-    style MON fill:#81C784
-    style COMP fill:#F06292
-```
-
-## 📈 Performance & Scalabilité
-
-### Métriques de Performance
-
-| Métrique | Objectif | Actuel |
-|----------|----------|---------|
-| 🚀 Latence API | < 200ms | 150ms |
-| 🎯 Accuracy | > 95% | 97.2% |
-| 📊 Throughput | 1000 req/s | 1200 req/s |
-| ⚡ Uptime | 99.9% | 99.95% |
+    style ALERTS fill:#FFB74D
 
 ## 🤝 Contribution
 
