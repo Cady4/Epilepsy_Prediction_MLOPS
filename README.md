@@ -1,6 +1,4 @@
-# 🧠 Epilepsy Prediction MLOps Platform
-
-<div align="center">
+<h1 style="text-align: center;"> 🧠 Epilepsy Prediction MLOps Platform </h1>
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
@@ -123,6 +121,7 @@ flowchart TD
     G --> H[🤖 Model Training]
     H --> I[📊 Model Evaluation]
     I --> J{📈 Performance Check}
+    
     
     J -->|⭐ Better| K[🚀 Model Promotion]
     J -->|📉 Worse| L[🔄 Retrain with New Params]
