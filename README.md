@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center;">
-  <h1> 🧠 Projet MLOps Epilepsy Prediction  P</h1>
+  <h1> 🧠 Projet MLOps Epilepsy Prediction  </h1>
 </div>
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
