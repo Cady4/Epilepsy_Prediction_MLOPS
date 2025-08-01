@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center;">
-  <h1> 🧠 Epilepsy Prediction MLOps Platform </h1>
+  <h1> 🧠 Projet MLOps Epilepsy Prediction  P</h1>
 </div>
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
@@ -19,7 +19,7 @@
 
 ## 🎯 Vue d'ensemble
 
-Cette plateforme MLOps de pointe offre une solution complète pour la prédiction d'épilepsie, intégrant les meilleures pratiques DevOps et MLOps dans un environnement de microservices hautement scalable et sécurisé.
+Cette plateforme a été conçue pour prédire les crises d’épilepsie. Elle applique les bonnes pratiques DevOps et MLOps et utilise des micro-services, ce qui lui assure évolutivité et sécurité.
 
 Le schéma suivant illustre le workflow général, étant donné qu'un utilisateur lance une requete pour faire une prédiction : 
 
@@ -127,7 +127,6 @@ Git >= 2.30
 
 ```bash
 # 1️⃣ Cloner le repository
-git clone https://github.com/your-org/epilepsy-mlops.git
 cd epilepsy-mlops
 
 # 2️⃣ Configuration de l'environnement
@@ -226,27 +225,17 @@ graph LR
     style PROM fill:#FF6B6B
     style GRAF fill:#4ECDC4
 ```
-## 🤝 Contribution
 
-1. **Fork** le repository
-2. **Créer** une branche feature (`git checkout -b feature/amazing-feature`)
-3. **Commiter** vos changements (`git commit -m '✨ Add amazing feature'`)
-4. **Pousser** vers la branche (`git push origin feature/amazing-feature`)
-5. **Ouvrir** une Pull Request
 
 
 ---
 
 <div align="center">
 
-**🌟 Si ce projet vous aide, n'hésitez pas à lui donner une étoile ! 🌟**
 
-[⬆️ Retour en haut](#-epilepsy-prediction-mlops-platform)
+
 
 </div>
 
 ---
 
-<div align="center">
-<sub>Réalisé par Sarah dans le cadre du projet MLOps • © 2025</sub>
-</div>
